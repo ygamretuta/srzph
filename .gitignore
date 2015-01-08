@@ -6,22 +6,23 @@
 
 # Ignore bundler config.
 /.bundle
-
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
-
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
+# Ignore bundler files
 /vendor/bundle
+# Ignore jetbrains dirs
 /.idea
 # Ignore application configuration
 /config/application.yml
 /config/database.yml
 /config/secrets.yml
 # Ignore Capistrano files
+/.capistrano
 /config/deploy
 /config/deploy.rb
 Capfile
