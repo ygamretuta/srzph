@@ -10,6 +10,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'figaro'
+gem 'pg'
+
 group :development do
   gem 'capistrano-rails'
 end

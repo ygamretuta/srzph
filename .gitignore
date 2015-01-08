@@ -17,3 +17,7 @@
 /tmp
 /vendor/bundle
 /.idea
+# Ignore application configuration
+/config/application.yml
+/config/database.yml
+/config/secrets.yml
