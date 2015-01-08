@@ -17,6 +17,7 @@ gem "slim-rails"
 
 group :development do
   gem 'capistrano-rails'
+  gem 'capistrano-bundler'
   gem 'capistrano-linked-files'
 end
 
