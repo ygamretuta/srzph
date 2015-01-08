@@ -21,3 +21,7 @@
 /config/application.yml
 /config/database.yml
 /config/secrets.yml
+# Ignore Capistrano files
+/config/deploy
+/config/deploy.rb
+Capfile
