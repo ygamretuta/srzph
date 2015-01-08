@@ -189,7 +189,6 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  capistrano-bundler
   capistrano-linked-files
   capistrano-rails
   coffee-rails (~> 4.1.0)
