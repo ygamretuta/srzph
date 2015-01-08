@@ -14,10 +14,10 @@ gem 'figaro'
 gem 'pg'
 gem 'high_voltage', '~> 2.2.1'
 gem "slim-rails"
+gem 'capistrano-linked-files'
 
 group :development do
   gem 'capistrano-rails'
-  gem 'capistrano-linked-files'
 end
 
 group :development, :test do
