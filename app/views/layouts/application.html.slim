@@ -1,9 +1,510 @@
 doctype html
 html
   head
-    title Srzph
+    title= yield(:title).empty? ? t('app.default_title') : "#{t('app.default_title')} - #{yield(:title)}"
+    script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = yield
+    header#header
+      .header_top
+        .container
+          .row
+            .col-sm-6
+              .contactinfo
+                ul.nav.nav-pills
+                  li
+                    a href="#"
+                      = fa_icon 'phone', text:'91999199'
+                  li
+                    a href="#"
+                      = fa_icon 'envelope', text:'sales@srzph.com'
+            .col-sm-6
+              .social-icons.pull-right
+                ul.nav.navbar-nav
+                  li
+                    a href="#"
+                      = fa_icon 'facebook'
+                  li
+                    a href="#"
+                      = fa_icon 'twitter'
+                  li
+                    a href="#"
+                      = fa_icon 'linkedin'
+                  li
+                    a href="#"
+                      = fa_icon 'twitter'
+                  li
+                    a href="#"
+                      = fa_icon 'dribble'
+                  li
+                    a href="#"
+                      = fa_icon 'google-plus'
+
+      .header-middle
+        .container
+          .row
+            .col-sm-4
+              .logo.pull-left
+                a href="#"
+                  = image_tag 'home/logo.png', alt:''
+              .btn-group.pull-right
+                .btn-group
+                  button.btn.btn-default.dropdown-toggle.usa type="button" data-toggle="dropdown"
+                    | USA
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a href="#" Canada
+                    li
+                      a href="#" UK
+
+                .btn-group
+                  button.btn.btn-default.dropdown-toggle.usa type="button" data-toggle="dropdown"
+                    | DOLLAR
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a href="#" Canadian Dollar
+                    li
+                      a href="#" Pound
+
+            .col-sm-8
+              .shop-menu.pull-right
+                ul.nav.navbar-nav
+                  li
+                    a href="#"
+                      = fa_icon 'user', text: 'Account'
+                  li
+                    a href="#"
+                      = fa_icon 'star', text: 'Wishlist'
+                  li
+                    a href="#"
+                      = fa_icon 'crosshairs', text: 'Checkout'
+                  li
+                    a href="#"
+                      = fa_icon 'shopping-cart', text: 'Cart'
+                  li
+                    a href="#"
+                      = fa_icon 'lock', text: 'Login'
+
+      .header-bottom
+        .container
+          .row
+            .col-sm-9
+              .navbar-header
+                button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                  span.sr-only Toggle Navigation
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+              .mainmenu.pull-left
+                ul.nav.navbar-nav.collapse.navbar-collapse
+                  li
+                    a.active href="#" Home
+                  li.dropdown
+                    a href="#"
+                      = fa_icon 'angle-down', text:'Shop', right:true
+
+                    ul.sub-menu role="menu"
+                      li= link_to 'Products', '#'
+                      li= link_to 'Product Details', '#'
+                      li= link_to 'Checkout', '#'
+                      li= link_to 'Cart', '#'
+                      li= link_to 'Login', '#'
+
+                  li.dropdown
+                    = link_to '#' do
+                      = fa_icon 'angle-down', text:'Blog', right:true
+                    ul.sub-menu role="menu"
+                      li= link_to 'Blog List', '#'
+                      li= link_to 'Blog Single', '#'
+                  li= link_to '404', '#'
+                  li= link_to 'Contact Us', '#'
+
+            .col-sm-3
+              .search_box.pull-right
+                input type="text" placeholder="Search"
+
+    section#slider
+      .container
+        .row
+          .col-sm-12
+            #slider-carousel.carousel.slide data-ride="carousel"
+              ol.carousel-indicators
+                li data-target="#slider-carousel" data-slide-to="0" class="active"
+                li data-target="#slider-carousel" data-slide-to="1"
+                li data-target="#slider-carousel" data-slide-to="2"
+
+              .carousel-inner
+                .item.active
+                  .col-sm-6
+                    h1
+                      span E
+                      | -SHOPPER
+                    h2 Free E-Commerce Template
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    button.btn.btn-default.get type="button" Get it now
+
+                  .col-sm-6
+                    = image_tag 'home/girl1.jpg', class:'girl img-responsive', alt:''
+                    = image_tag 'home/pricing.png', class:'pricing', alt:''
+
+                .item
+                  .col-sm-6
+                    h1
+                      span E
+                      | -SHOPPER
+                    h2 Responsive Design
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    button.btn.btn-default.get type="button" Get it now
+
+                  .col-sm-6
+                    = image_tag 'home/girl1.jpg', class: 'girl img-responsive', alt: ''
+                    = image_tag 'home/pricing.png', class: 'pricing', alt: ''
+
+
+                .item
+                  .col-sm-6
+                    h1
+                      span E
+                      | -SHOPPER
+                    h2 Responsive Design
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    button.btn.btn-default.get type="button" Get it now
+
+                  .col-sm-6
+                    = image_tag 'home/girl1.jpg', class: 'girl img-responsive', alt: ''
+                    = image_tag 'home/pricing.png', class: 'pricing', alt: ''
+
+              a.left.control-carousel.hidden-xs href="#slider-carousel" data-slide="prev"
+                = fa_icon 'angle-left'
+              a.right.control-carousel.hidden-xs href="#slider-carousel" data-slide="next"
+                = fa_icon 'angle-right'
+
+    section
+      .container
+        .row
+          .col-sm-3
+            .left-sidebar
+              h2 Category
+              #accordian.panel-group.category-products
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a data-toggle="collapse"  data-parent="#accordian" href="#sportswear"
+                        span.badge.pull-right
+                          = fa_icon 'plus'
+                        | Sportswear
+
+                  #sportswear.panel-collapse.collapse
+                    .panel-body
+                      ul
+                        li= link_to 'Nike'
+                        li= link_to 'Under Armour'
+                        li= link_to 'Adidas'
+                        li= link_to 'Puma'
+                        li= link_to 'ASICS'
+
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a data-toggle="collapse" data-parent="#accordian" href="#mens"
+                        span.badge.pull-right
+                          = fa_icon 'plus'
+                        | Mens
+
+                  #mens.panel-collapse.collapse
+                    .panel-body
+                      ul
+                        li= link_to 'Fendi'
+                        li= link_to 'Guess'
+                        li= link_to 'Valentino'
+                        li= link_to 'Dior'
+                        li= link_to 'Versace'
+                        li= link_to 'Armani'
+                        li= link_to 'Prada'
+                        li= link_to 'Dolce and Gabbana'
+                        li= link_to 'Chanel'
+                        li= link_to 'Gucci'
+
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a data-toggle="collapse" data-parent="#accordian" href="#womens"
+                        span.badge.pull-right
+                          = fa_icon 'plus'
+                        | Womens
+
+                  #womens.panel-collapse.collapse
+                    .panel-body
+                      ul
+                        li= link_to 'Fendi'
+                        li= link_to 'Guess'
+                        li= link_to 'Valentino'
+                        li= link_to 'Dior'
+                        li= link_to 'Versace'
+
+                .panel-default
+                  .panel-heading
+                    h4.panel-title
+                      = link_to 'Kids'
+
+                .panel-default
+                  .panel-heading
+                    h4.panel-title
+                      = link_to 'Fashion'
+
+                .panel-default
+                  .panel-heading
+                    h4.panel-title
+                      = link_to 'Households'
+
+                .panel-default
+                  .panel-heading
+                    h4.panel-title
+                      = link_to 'Interiors'
+
+                .panel-default
+                  .panel-heading
+                    h4.panel-title
+                      = link_to 'Clothing'
+
+                .panel-default
+                  .panel-heading
+                    h4.panel-title
+                      = link_to 'Bags'
+
+                .panel-default
+                  .panel-heading
+                    h4.panel-title
+                      = link_to 'Shoes'
+
+              .brands_products
+                h2 Brands
+                .brands-name
+                  ul.nav.nav-pills.nav-stacked
+                    li
+                      = link_to '#' do
+                        span.pull-right (50)
+                        | Acne
+                    li
+                      = link_to '#' do
+                        span.pull-right (50)
+                        | Grüne Erde
+                    li
+                      = link_to '#' do
+                        span.pull-right (50)
+                        | Albiro
+                    li
+                      = link_to '#' do
+                        span.pull-right (50)
+                        | Ronhill
+                    li
+                      = link_to '#' do
+                        span.pull-right (50)
+                        | Oddmolly
+                    li
+                      = link_to '#' do
+                        span.pull-right (50)
+                        | Boudestijn
+                    li
+                      = link_to '#' do
+                        span.pull-right (50)
+                        | Rösch creative culture
+
+              .price-range
+                h2 Price Range
+                .well.text-center
+                  input.span2#sl2 type="text" value="#" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250, 450]"
+                  br
+                  b.pull-left $0
+                  b.pull-right $600
+
+              .shipping.text-center
+                = image_tag 'home/shipping.jpg'
+
+          .col-sm-9.padding-right
+            .features_items
+              h2.title.text-center Features Items
+
+              - %w(1 2 3 4 5 6).each do |n|
+                .col-sm-4
+                  .product-image-wrapper
+                    .single-products
+                      .productinfo.text-center
+                        = image_tag "home/product#{n}.jpg", alt: ''
+                        h2 $56
+                        p Easy Polo Black Edition
+                        a.btn.btn-default.add-to-cart href="#"
+                          = fa_icon 'shopping-cart', text: 'Add to cart'
+                      .choose
+                        ul.nav.nav-pills.nav-justified
+                          li
+                            = link_to '#' do
+                              = fa_icon 'plus-square', text: 'Add to Wishlist'
+                          li
+                            = link_to '#' do
+                              = fa_icon 'plus-square', text: 'Add to Compare'
+
+            .category-tab
+              .col-sm-12
+                ul.nav.nav-tabs
+                  - %w(tshirt blazers sunglass kids poloshirt).each_with_index do |v, i|
+                    li class="#{i == 0 ? 'active' : ''}"
+                      a href="##{v}" data-toggle="tab" #{v.capitalize}
+
+              .tab-content
+                - %w(tshirt blazers sunglass kids poloshirt).each_with_index do |value, index|
+                    - classes = index == 0 ? 'tab-pane fade active in' : 'tab-pane fade'
+                    div class="#{classes}" id="#{value}"
+                      - %w(1 2 3 4).each do |i|
+                        .col-sm-3
+                          .product-image-wrapper
+                            .single-products
+                              .productinfo.text-center
+                                = image_tag "home/gallery#{i}.jpg", alt: ''
+                                h2 $56
+                                p Easy Polo Black Edition
+                                a.btn.btn-default.add-to-cart href="#"
+                                  = fa_icon 'shopping-cart', text: 'Add to cart'
+
+            .recommended_items
+              h2.title.text-center recommended items
+              #recommended-item-carousel.carousel.slide data-ride="carousel"
+                .carousel-inner
+                  .item.active
+                    - %w(1 2 3).each do |i|
+                      .col-sm-4
+                        .product-image-wrapper
+                          .single-products
+                            .productinfo.text-center
+                              = image_tag "home/recommend#{i}.jpg"
+                              h2 $56
+                              p Easy Polo Black Edition
+                              = link_to '#' do
+                                = fa_icon 'shopping-cart'
+                  .item
+                    - %w(1 2 3).each do |i|
+                      .col-sm-4
+                        .product-image-wrapper
+                          .single-products
+                            .productinfo.text-center
+                              = image_tag "home/recommend#{i}.jpg"
+                              h2 $56
+                              p Easy Polo Black Edition
+                              = link_to '#' do
+                                = fa_icon 'shopping-cart'
+
+                a.left.recommended-item-control href="#recommended-item-carousel" data-slide="prev"
+                  = fa_icon 'angle-left'
+                a.right.recommended-item-control href="#recommended-item-carousel" data-slide="next"
+                  = fa_icon 'angle-right'
+
+    footer#footer
+      .footer-top
+        .container
+          .row
+            .col-sm-2
+              .companyinfo
+                h2
+                  span e
+                  | shopper
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor
+
+            .col-sm-7
+              -%w(1 2 3 4).each do |i|
+                .col-sm-3
+                  .video-gallery.text-center
+                    a href="#"
+                      .iframe-img
+                        = image_tag "home/iframe#{i}.png", alt:''
+                      .overlay-icon
+                        = fa_icon 'play-circle-o'
+                    p Circle of Hands
+                    h2 Dec 24 2014
+            .col-sm-3
+              .address
+                = image_tag 'home/map.png', alt:''
+                p 505 S Atlantic Ave Virginia Beach, VA(Virginia)
+
+      .footer-widget
+        .container
+          .row
+            .col-sm-2
+              .single-widget
+                h2 Service
+                ul.nav.nav-pills.nav-stacked
+                  li
+                    a href="#"  Online Help
+                  li
+                    a href="#"  Contact Us
+                  li
+                    a href="#"  Order Status
+                  li
+                    a href="#"  Change Location
+                  li
+                    a href="#"  FAQ’s
+            .col-sm-2
+              .single-widget
+                h2 Quock Shop
+                ul.nav.nav-pills.nav-stacked
+                  li
+                    a href="#"  T-Shirt
+                  li
+                    a href="#"  Mens
+                  li
+                    a href="#"  Womens
+                  li
+                    a href="#"  Gift Cards
+                  li
+                    a href="#"  Shoes
+            .col-sm-2
+              .single-widget
+                h2 Policies
+                ul.nav.nav-pills.nav-stacked
+                  li
+                    a href="#"  Terms of Use
+                  li
+                    a href="#"  Privecy Policy
+                  li
+                    a href="#"  Refund Policy
+                  li
+                    a href="#"  Billing System
+                  li
+                    a href="#"  Ticket System
+            .col-sm-2
+              .single-widget
+                h2 About Shopper
+                ul.nav.nav-pills.nav-stacked
+                  li
+                    a href="#"  Company Information
+                  li
+                    a href="#"  Careers
+                  li
+                    a href="#"  Store Location
+                  li
+                    a href="#"  Affillate Program
+                  li
+                    a href="#"  Copyright
+            .col-sm-3.col-sm-offset-1
+              .single-widget
+                h2 About Shopper
+                form.searchform action="#"
+                  input placeholder=("Your email address") type="text" /
+                  button.btn.btn-default type="submit"
+                    i.fa.fa-arrow-circle-o-right
+                  p
+                    | Get the most recent updates from
+                    br
+                    | outsite and be updated your self...
+
+      .footer-bottom
+        .container
+          .row
+            p.pull-left Copyright © 2013 E-SHOPPER Inc. All rights reserved.
+            p.pull-right
+              | Designed by
+              span
+                a href="http://www.themeum.com" target="_blank"  Themeum
