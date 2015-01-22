@@ -19,9 +19,11 @@ gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 gem 'jquery-ui-rails'
 gem 'bower-rails', '~> 0.9.1'
+gem 'awesome_print'
 
 group :development do
   gem 'capistrano-rails'
+  gem 'capistrano-bower'
 end
 
 group :development, :test do

@@ -1,0 +1,119 @@
+header#header
+  .header_top
+    .container
+      .row
+        .col-sm-6
+          .contactinfo
+            ul.nav.nav-pills
+              li
+                a href="#"
+                  = fa_icon 'phone', text:'91999199'
+              li
+                a href="#"
+                  = fa_icon 'envelope', text:'sales@srzph.com'
+        .col-sm-6
+          .social-icons.pull-right
+            ul.nav.navbar-nav
+              li
+                a href="#"
+                  = fa_icon 'facebook'
+              li
+                a href="#"
+                  = fa_icon 'twitter'
+              li
+                a href="#"
+                  = fa_icon 'linkedin'
+              li
+                a href="#"
+                  = fa_icon 'twitter'
+              li
+                a href="#"
+                  = fa_icon 'dribble'
+              li
+                a href="#"
+                  = fa_icon 'google-plus'
+
+  .header-middle
+    .container
+      .row
+        .col-sm-4
+          .logo.pull-left
+            a href="#"
+              = image_tag 'home/logo.png', alt:''
+          .btn-group.pull-right
+            .btn-group
+              button.btn.btn-default.dropdown-toggle.usa type="button" data-toggle="dropdown"
+                | USA
+                span.caret
+              ul.dropdown-menu
+                li
+                  a href="#" Canada
+                li
+                  a href="#" UK
+
+            .btn-group
+              button.btn.btn-default.dropdown-toggle.usa type="button" data-toggle="dropdown"
+                | DOLLAR
+                span.caret
+              ul.dropdown-menu
+                li
+                  a href="#" Canadian Dollar
+                li
+                  a href="#" Pound
+
+        .col-sm-8
+          .shop-menu.pull-right
+            ul.nav.navbar-nav
+              li
+                a href="#"
+                  = fa_icon 'user', text: 'Account'
+              li
+                a href="#"
+                  = fa_icon 'star', text: 'Wishlist'
+              li
+                a href="#"
+                  = fa_icon 'crosshairs', text: 'Checkout'
+              li
+                a href="#"
+                  = fa_icon 'shopping-cart', text: 'Cart'
+              li
+                a href="#"
+                  = fa_icon 'lock', text: 'Login'
+
+  .header-bottom
+    .container
+      .row
+        .col-sm-9
+          .navbar-header
+            button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
+              span.sr-only Toggle Navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+          .mainmenu.pull-left
+            ul.nav.navbar-nav.collapse.navbar-collapse
+              li
+                a.active href="#" Home
+              li.dropdown
+                a href="#"
+                  = fa_icon 'angle-down', text:'Shop', right:true
+
+                ul.sub-menu role="menu"
+                  li= link_to 'Products', '#'
+                  li= link_to 'Product Details', '#'
+                  li= link_to 'Checkout', '#'
+                  li= link_to 'Cart', '#'
+                  li= link_to 'Login', '#'
+
+              li.dropdown
+                = link_to '#' do
+                  = fa_icon 'angle-down', text:'Blog', right:true
+                ul.sub-menu role="menu"
+                  li= link_to 'Blog List', '#'
+                  li= link_to 'Blog Single', '#'
+              li= link_to '404', '#'
+              li= link_to 'Contact Us', '#'
+
+        .col-sm-3
+          .search_box.pull-right
+            input type="text" placeholder="Search"

@@ -1,0 +1,31 @@
+section
+  .container
+    .row
+      .col-sm-3
+        .left-sidebar
+          = render 'category'
+          = render 'brand'
+          = render 'price_range'
+          = render 'shipping'
+      .col-sm-9
+        .features_items
+          h2.title.text-center Features Items
+          - @items.each do |item|
+            .col-sm-4
+              .product-image-wrapper
+                .single-products
+                  .productinfo.text-center
+                    = image_tag "#{@base_image_uri}w_268,h_249,c_limit/#{item['photo']}"
+                    h2 $56
+                    p= item['name']
+                    = link_to '#', class:'btn btn-default add-to-cart' do
+                      = fa_icon 'shopping-cart', text:'Add to Cart'
+                .choose
+                  ul.nav.nav-pills.nav-justified
+                    li
+                      = link_to '#' do
+                        =fa_icon 'plus-square', text:'Add to Wishlist'
+
+                    li
+                      = link_to '#' do
+                        =fa_icon 'plus-square', text:'Compare'

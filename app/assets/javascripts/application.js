@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery-ui
 //= require bootstrap-sprockets
-//= require gmaps
-//= require_directory ./eshopper
-//= require_tree .
+//= require eshopper/jquery.scrollUp.min
+//= require eshopper/price-range
+//= require eshopper/jquery.prettyPhoto
+//= require eshopper/main

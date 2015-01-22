@@ -1,0 +1,92 @@
+h2 Category
+#accordian.panel-group.category-products
+  .panel.panel-default
+    .panel-heading
+      h4.panel-title
+        a data-toggle="collapse"  data-parent="#accordian" href="#sportswear"
+          span.badge.pull-right
+            = fa_icon 'plus'
+          | Sportswear
+
+    #sportswear.panel-collapse.collapse
+      .panel-body
+        ul
+          li= link_to 'Nike'
+          li= link_to 'Under Armour'
+          li= link_to 'Adidas'
+          li= link_to 'Puma'
+          li= link_to 'ASICS'
+
+  .panel.panel-default
+    .panel-heading
+      h4.panel-title
+        a data-toggle="collapse" data-parent="#accordian" href="#mens"
+          span.badge.pull-right
+            = fa_icon 'plus'
+          | Mens
+
+    #mens.panel-collapse.collapse
+      .panel-body
+        ul
+          li= link_to 'Fendi'
+          li= link_to 'Guess'
+          li= link_to 'Valentino'
+          li= link_to 'Dior'
+          li= link_to 'Versace'
+          li= link_to 'Armani'
+          li= link_to 'Prada'
+          li= link_to 'Dolce and Gabbana'
+          li= link_to 'Chanel'
+          li= link_to 'Gucci'
+
+  .panel.panel-default
+    .panel-heading
+      h4.panel-title
+        a data-toggle="collapse" data-parent="#accordian" href="#womens"
+          span.badge.pull-right
+            = fa_icon 'plus'
+          | Womens
+
+    #womens.panel-collapse.collapse
+      .panel-body
+        ul
+          li= link_to 'Fendi'
+          li= link_to 'Guess'
+          li= link_to 'Valentino'
+          li= link_to 'Dior'
+          li= link_to 'Versace'
+
+  .panel-default
+    .panel-heading
+      h4.panel-title
+        = link_to 'Kids'
+
+  .panel-default
+    .panel-heading
+      h4.panel-title
+        = link_to 'Fashion'
+
+  .panel-default
+    .panel-heading
+      h4.panel-title
+        = link_to 'Households'
+
+  .panel-default
+    .panel-heading
+      h4.panel-title
+        = link_to 'Interiors'
+
+  .panel-default
+    .panel-heading
+      h4.panel-title
+        = link_to 'Clothing'
+
+  .panel-default
+    .panel-heading
+      h4.panel-title
+        = link_to 'Bags'
+
+  .panel-default
+    .panel-heading
+      h4.panel-title
+        = link_to 'Shoes'
