@@ -10,7 +10,7 @@ section
       .col-sm-9
         .features_items
           h2.title.text-center Features Items
-          - if @items.any?
+          - if @items.present? && @items.any?
             - @items.each do |item|
               .col-sm-4
                 .product-image-wrapper
