@@ -17,7 +17,7 @@ section
                   .single-products
                     .productinfo.text-center
                       = image_tag "#{@base_image_uri}w_268,h_249,c_limit/#{item['photo']}"
-                      p= item.name
+                      p= item['name']
                       = link_to '#', class:'btn btn-default add-to-cart' do
                         = fa_icon 'question-circle', text:'Ask Quotation'
                   .choose
