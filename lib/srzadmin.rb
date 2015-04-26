@@ -1,13 +1,18 @@
 class SrzAdmin
   include HTTParty
-  base_uri 'srzphadmin.herokuapp.com'
+  base_uri 'http://localhost:8000'
+  EXCEPTIONS = [HTTParty::Error, SocketError, StandardError]
 
   def initialize
     @options = {query: {}}
   end
 
   def items
-    self.class.get('/items', @options)
+    begin
+      self.class.get('/items', @options)
+    rescue *EXCEPTIONS
+      false
+    end
   end
 
   def categories

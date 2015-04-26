@@ -5,11 +5,9 @@ section
         .left-sidebar
           = render 'category'
           = render 'brand'
-          = render 'price_range'
-          = render 'shipping'
       .col-sm-9
         .features_items
-          h2.title.text-center Features Items
+          h2.title.text-center Featured Items
           - if @items.present? && @items.any?
             - @items.each do |item|
               .col-sm-4

@@ -10,21 +10,10 @@ class DynamicPagesController < ApplicationController
 
   def catalog
     api = SrzAdmin.new
-
-    begin
-      @items = api.items
-    rescue
-      @items = nil
-    end
-    ap @items
-
-    if @items.respond_to?(:code)
-      case @items.code
-        when 404
-          @items = nil
-        when 500.600
-          @items = nil
-      end
+    @items = nil
+    request = api.items
+    if request
+      @items = request
     end
   end
 
